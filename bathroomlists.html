@@ -1,0 +1,87 @@
+<!HTML DOCTYPE>
+<html>
+<head>
+    <title>{{title}}</title>
+    <style>
+        body {
+            background-color: #FF5964;
+            font-family: "American Typewriter";
+
+        }
+
+        h1, body > p {
+            text-align: center;
+        }
+
+        h2 {
+            margin: 15px;
+        }
+
+        #all {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .bathrooms {
+            height: max-content;
+            box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, .5);
+            background-color: #FFFFFF;
+            margin: 20px;
+            border-radius: 15px;
+        }
+
+        .attributes {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .attributes div {
+            margin: 15px;
+            text-align: center;
+            font-style: italic;
+            background-color: #0F7173;
+            color: #FFFFFF;
+            border-radius: 15px;
+            padding: 5px;
+        }
+
+        .bathrooms #distance, h3 {
+            margin: 15px;
+            font-size: 20px;
+            /*color: #0F7173;*/
+            font-weight: normal;
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>
+        {{body_title}}
+    </h1>
+    <br>
+    <p> Sorted by Distance </p>
+    <div id="all">
+        {% for bathroom in bathroomresult %}
+            <div class="bathrooms">
+                <h2> {{bathroom.placename}}, {{bathroom.street}}, {{bathroom.state}} </h2>
+                <p id="distance"> {{bathroom.distance}} miles</p>
+                {% if bathroom.comment != None %}
+                    <h3> Note: {{bathroom.comment}}</h3>
+                {% endif %}
+                <div class="attributes">
+                    {% if bathroom.accessible %}
+                        <div> Accessible </div>
+                    {% endif %}
+                    {% if bathroom.babyfriendly %}
+                        <div> Child Friendly </div>
+                    {% endif %}
+                    {% if bathroom.unisex %}
+                        <div> Gender Inclusive </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!HTML DOCTYPE>
+<html>
+<head>
+    <title>{{title}}</title>
+    <style>
+        body {
+            background-color: #0F7173;
+            font-family: "American Typewriter";
+            align-content: center;
+        }
+
+        #options {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 60px;
+            color: #FF5964;
+        }
+
+        h4 {
+            font-weight: normal;
+            text-align: center;
+            font-size: 40px;
+            color: white;
+        }
+
+        .inputs {
+            width: 100%;
+            margin: 20px;
+            font-size: 45px;
+            color: #FF5964;
+        }
+
+        .inputs #search_input {
+            font-size: 30px;
+            color: #FF5964;
+        }
+
+        #submit {
+            text-align: center;
+        }
+
+        #submit input {
+            text-align: center;
+            font-family: "American Typewriter";
+            background-color: #FF5964;
+            color: #FFFFFF;
+            font-size: 30px;
+            border: 0px;
+            width: 20%;
+            height: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>
+        GottaGo!
+    </h1>
+    <h4> Looking for a bathroom with a changing table or one that's gender inclusive or one that has accessibility
+        or maybe even all three? GottaGo! is here to help you. Enter an address, locality or location and find the
+        closest bathroom that you want to use. </h4>
+    <form action="bathroomlists" method="post">
+        <div id="options">
+            <div class="inputs"><input type="text" id="search_input" name="search_input" placeholder="Enter An Address"/></div>
+            <div class="inputs"><input type="checkbox" id="accessible" name="accessible" value="accessible"> Accessible </div>
+            <div class="inputs"><input type="checkbox" id="unisex" name="unisex" value="unisex"> Gender Neutral </div>
+            <div class="inputs"><input type="checkbox" id="changingtable" name="changingtable" value="changingtable"> Changing Table </div>
+        </div>
+        <div id="submit"><input type="submit" value="Submit" name="gobtn"/></div>
+    </form>
+</body>
+</html>
